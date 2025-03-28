@@ -1,26 +1,16 @@
-import { Suspense } from 'react';
-import { useRoutes } from 'react-router-dom';
-import routes from '@/config/routes';
-import AuthGuard from '@/components/AuthGuard';
+import React from "react";
 
-const RouterView = () => {
-  const element = useRoutes(
-    routes.map(route => ({
-      ...route,
-      element: (
-        <Suspense fallback={<>加载中...</>}>
-          <AuthGuard 
-            requiredAuth={route.meta?.requiredAuth}
-            permissions={route.meta?.permissions}
-          >
-            {route.element}
-          </AuthGuard>
-        </Suspense>
-      ),
-      children: route.children // 自动处理嵌套路由
-    }))
-  );
+import { createBrowserRouter } from "react-router-dom";
+import NotFound from "../layouts/NotFound";
+import routers from '../config/routes'
 
-  return element;
-};
-export default RouterView;
+
+const router = createBrowserRouter([
+  ...routers,
+  {
+    path: "*",
+    element: <NotFound />,
+  }
+]);
+
+export default router;

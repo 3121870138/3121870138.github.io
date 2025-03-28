@@ -1,26 +1,8 @@
-// src/layouts/MainLayout.jsx
-// import { Outlet } from "react-router-dom";
-
-// const MainLayout = () => {
-//   return (
-//     <div className="app">
-//       <header>公共头部</header>
-//       <main>
-//         {/* 子路由内容将在此处渲染 */}
-//         <Outlet />
-//       </main>
-//       <footer>公共底部</footer>
-//     </div>
-//   );
-// };
-
-// export default MainLayout;
-
-
 import React from 'react';
 import { Outlet } from "react-router-dom";
 import { LaptopOutlined, NotificationOutlined, UserOutlined } from '@ant-design/icons';
 import { Breadcrumb, Layout, Menu, theme } from 'antd';
+import LeftMenu from '@/components/Menu/LeftMenu'
 const { Header, Content, Footer, Sider } = Layout;
 const items1 = ['1', '2', '3'].map(key => ({
   key,
@@ -58,22 +40,26 @@ const MainLayout = () => {
         />
       </Header>
       <div style={{ padding: '0' }}>
-        <Breadcrumb style={{ margin: '16px 0' }}>
-          <Breadcrumb.Item>Home</Breadcrumb.Item>
-          <Breadcrumb.Item>List</Breadcrumb.Item>
-          <Breadcrumb.Item>App</Breadcrumb.Item>
-        </Breadcrumb>
+        <Breadcrumb
+          style={{ margin: '16px' }}
+          items={[
+            { title: '首页', href: '/' },
+            { title: '详情页' }
+          ]}
+          separator="/"  // 可选：全局定义分隔符‌:ml-citation{ref="5,8" data="citationList"}
+        />
         <Layout
           style={{ padding: '24px 0', background: colorBgContainer, borderRadius: borderRadiusLG }}
         >
           <Sider style={{ background: colorBgContainer }} width={200}>
-            <Menu
+            <LeftMenu />
+            {/* <Menu
               mode="inline"
               defaultSelectedKeys={['1']}
               defaultOpenKeys={['sub1']}
               style={{ height: '100%' }}
               items={items2}
-            />
+            /> */}
           </Sider>
           <Content style={{ padding: '0 24px', minHeight: 280 }}>
             {/* 子路由内容将在此处渲染 */}

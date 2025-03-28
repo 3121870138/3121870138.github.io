@@ -1,11 +1,13 @@
 import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
-import { RouterProvider } from 'react-router-dom';
+import { RouterProvider, BrowserRouter } from 'react-router-dom';
 import router from './router';
 import './index.css';
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ErrorBoundary from './layouts/ErrorBoundary';
+
+import RouterView from './router/index copy 2';
 
 // 全局加载态组件
 const Loading = () => <div>Loading...</div>;
@@ -13,11 +15,14 @@ const Loading = () => <div>Loading...</div>;
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ErrorBoundary>
+    <ErrorBoundary >
       <Suspense fallback={<Loading />}>
         <RouterProvider router={router} />
       </Suspense>
     </ErrorBoundary>
+    {/* <BrowserRouter>
+      <RouterView />
+    </BrowserRouter> */}
   </React.StrictMode>
 );
 
