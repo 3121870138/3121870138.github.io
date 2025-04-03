@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[53],{4053:(e,s,n)=>{n.r(s),n.d(s,{default:()=>r});const r=[{username:"admin",password:"123456",role:"admin",token:"admin-token"},{username:"user",password:"123456",role:"user",token:"user-token"}]}}]);
+//# sourceMappingURL=53.e4adb87f.chunk.js.map
