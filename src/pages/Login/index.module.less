@@ -1,0 +1,92 @@
+.loginContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f0f2f5;
+  background-image: url('login'); // 可选的背景图
+  background-size: cover;
+  background-position: center;
+}
+
+.loginCard {
+  width: 320px;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.95);
+  
+  :global {
+    .ant-card-body {
+      padding: 24px;
+    }
+  }
+}
+
+.loginHeader {
+  text-align: center;
+  margin-bottom: 24px;
+
+  .logo {
+    margin-bottom: 16px;
+    
+    img {
+      height: 44px;
+      margin: 0 auto;
+    }
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.85);
+    font-weight: 600;
+  }
+}
+
+.prefixIcon {
+  color: rgba(0, 0, 0, 0.25);
+}
+
+.loginButton {
+  height: 40px;
+  font-size: 16px;
+}
+
+// 输入框样式优化
+:global {
+  .ant-input-affix-wrapper {
+    border-radius: 4px;
+    
+    &:hover, &:focus {
+      border-color: #1890ff;
+    }
+  }
+
+  .ant-input-prefix {
+    margin-right: 8px;
+  }
+}
+
+// 响应式适配
+@media screen and (max-width: 576px) {
+  .loginCard {
+    width: 300px;
+    margin: 0 16px;
+  }
+}
+
+// 添加一些动画效果
+.loginCard {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,29 +1,17 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { RouterProvider, BrowserRouter } from 'react-router-dom';
-import router from './router';
 import './index.css';
-// import App from './App';
+import App from './App.jsx';
 import reportWebVitals from './reportWebVitals';
-import ErrorBoundary from './layouts/ErrorBoundary';
-
-import RouterView from './router/index copy 2';
-
-// 全局加载态组件
-const Loading = () => <div>Loading...</div>;
+import ErrorBoundary from './components/Layouts/ErrorBoundary';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <ErrorBoundary >
-      <Suspense fallback={<Loading />}>
-        <RouterProvider router={router} />
-      </Suspense>
-    </ErrorBoundary>
-    {/* <BrowserRouter>
-      <RouterView />
-    </BrowserRouter> */}
-  </React.StrictMode>
+  // <React.StrictMode>
+  <ErrorBoundary >
+    <App />
+  </ErrorBoundary>
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
