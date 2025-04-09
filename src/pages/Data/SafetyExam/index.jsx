@@ -66,7 +66,7 @@ const SafetyExam = () => {
       title: '内容',
       dataIndex: 'content',
       key: 'content',
-      ellipsis: true,
+      // ellipsis: true,
       render: (text) => highlightText(text, searchText)
     },
     {
