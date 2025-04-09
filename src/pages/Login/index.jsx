@@ -9,6 +9,11 @@ import styles from './index.module.less'
 const Login = () => {
   const navigate = useNavigate()
   const [loading, setLoading] = useState(false)
+  const [isOpenDefaultLogin] = useState(false)
+  const [loginInfo] = useState({
+    username: 'admin',
+    password: '123456'
+  })
 
   // 处理登录
   const handleLogin = async values => {
@@ -49,16 +54,13 @@ const Login = () => {
           name="login"
           onFinish={handleLogin}
           size="large"
-          initialValues={{
-            username: 'admin',
-            password: '123456'
-          }}>
+          initialValues={isOpenDefaultLogin ? loginInfo : null}>
           <Form.Item name="username" rules={[{ required: true, message: '请输入用户名！' }]}>
-            <Input prefix={<UserOutlined className={styles.prefixIcon} />} placeholder="用户名: admin" />
+            <Input prefix={<UserOutlined className={styles.prefixIcon} />} placeholder={isOpenDefaultLogin ? `用户名: ${loginInfo.username}` : '请输入用户名'} />
           </Form.Item>
 
           <Form.Item name="password" rules={[{ required: true, message: '请输入密码！' }]}>
-            <Input.Password prefix={<LockOutlined className={styles.prefixIcon} />} placeholder="密码: 123456" />
+            <Input.Password prefix={<LockOutlined className={styles.prefixIcon} />}  placeholder={isOpenDefaultLogin ? `密码: ${loginInfo.password}` : '请输入密码'}/>
           </Form.Item>
 
           <Form.Item>

@@ -168,6 +168,11 @@ const routes = [
         path: '/data/analysis2',
         name: '数据分析2',
         component: 'Data/Analysis2'
+      },
+      {
+        path: '/data/safetyExam',
+        name: '安全数据模拟',
+        component: 'Data/SafetyExam'
       }
     ]
   }
