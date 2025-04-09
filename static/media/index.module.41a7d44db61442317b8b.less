@@ -1,0 +1,70 @@
+.container {
+  padding: 24px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 4px;
+  
+  :global {
+    .ant-card-head-title {
+      font-size: 18px;
+      font-weight: 600;
+    }
+  }
+}
+
+.searchBar {
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  .searchInput {
+    max-width: 300px;
+  }
+
+  .searchInfo {
+    font-size: 14px;
+    // color: rgba(0, 0, 0, 0.45);
+    color: red;
+    line-height: 1.5;
+    padding: 4px 0;
+
+    &:empty {
+      display: none;
+    }
+  }
+}
+
+.table {
+  :global {
+    .ant-table-thead > tr > th {
+      background: #fafafa;
+      font-weight: 500;
+    }
+
+    .ant-table-tbody > tr:hover {
+      td {
+        background: #f5f5f5;
+      }
+    }
+
+    .ant-empty {
+      margin: 32px 0;
+    }
+  }
+}
+
+// 响应式适配
+@media screen and (max-width: 576px) {
+  .container {
+    padding: 12px;
+  }
+
+  .searchBar {
+    .searchInput {
+      max-width: 100%;
+    }
+  }
+}

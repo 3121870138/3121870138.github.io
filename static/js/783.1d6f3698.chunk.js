@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[783],{7783:(e,s,b)=>{e.exports=b.p+"static/media/index.module.41a7d44db61442317b8b.less"}}]);
